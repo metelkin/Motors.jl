@@ -1,2 +1,7 @@
+name = "Motors"
+uuid = "7065164c-ec27-489f-a72a-ed183bcb6092"
+authors = ["Evgeny Metelkin <metelkin@insysbio.com>"]
+version = "0.1.0"
+
 [deps]
-BaremetalPi = "3a90a9a9-52f9-452b-94bd-193d585bd84f"
+PiGPIOC = "30a511cb-78f8-4457-8440-9b2c99933694"
