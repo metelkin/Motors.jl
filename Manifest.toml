@@ -1,6 +1,6 @@
 [[PiGPIOC]]
-git-tree-sha1 = "f223c5c83b89548c97e946a5115b2da425d0e453"
+git-tree-sha1 = "70b2300a384486230eb14c0479e7adef28f78270"
 repo-rev = "master"
-repo-url = "https://github.com/metelkin/PiGPIOC.jl"
+repo-url = "https://github.com/notinaboat/PiGPIOC.jl"
 uuid = "30a511cb-78f8-4457-8440-9b2c99933694"
 version = "0.1.0"

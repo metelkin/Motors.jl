@@ -6,5 +6,5 @@ Installation and run from sudo
 # sudo julia --project=.
 # ] instantiate
 
-sudo julia --project=. run.jl
+sudo julia --project=. test/simple.jl
 ```

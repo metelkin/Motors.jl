@@ -2,8 +2,6 @@ struct Car
     left::Motor
     right::Motor
     function Car(left::Motor, right::Motor)
-        gpioInitialise()
-        
         new(left, right)
     end
 end
@@ -11,6 +9,16 @@ end
 function forward(car::Car; duration = 0)
     forward(car.left)
     forward(car.right)
+
+    if duration > 0
+        sleep(duration)
+        clear(car)
+    end
+end
+
+function forward(car::Car, dutycycle::Int; duration = 0)
+    forward(car.left, dutycycle)
+    forward(car.right, dutycycle)
 
     if duration > 0
         sleep(duration)
@@ -28,6 +36,16 @@ function back(car::Car; duration = 0)
     end
 end
 
+function back(car::Car, dutycycle::Int; duration = 0)
+    back(car.left, dutycycle)
+    back(car.right, dutycycle)
+    
+    if duration > 0
+        sleep(duration)
+        clear(car)
+    end
+end
+
 function turn_left(car::Car; duration = 0)
     forward(car.left)
     back(car.right)
@@ -38,9 +56,29 @@ function turn_left(car::Car; duration = 0)
     end
 end
 
+function turn_left(car::Car, dutycycle::Int; duration = 0)
+    forward(car.left, dutycycle)
+    back(car.right, dutycycle)
+    
+    if duration > 0
+        sleep(duration)
+        clear(car)
+    end
+end
+
 function turn_right(car::Car; duration = 0)
     back(car.left)
     forward(car.right)
+    
+    if duration > 0
+        sleep(duration)
+        clear(car)
+    end
+end
+
+function turn_right(car::Car, dutycycle::Int; duration = 0)
+    back(car.left, dutycycle)
+    forward(car.right, dutycycle)
     
     if duration > 0
         sleep(duration)
